@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水仙花</title>
+</head>
+<style>
+    body {
+    padding: 0;
+    margin: 0 ;
+    background-color: #0E2C2A;
+    }
+   .flower{
+       width:1500px;
+       height:600px;
+       float:left;
+       left:0;
+       z-index: 1;
+       position:relative;
+       top:0;
+   }
+   .bag{
+       width:850px;
+       height:250px;
+       margin: 10px 50px;
+       display: flex;
+       float: right;
+       flex-flow:nowrap;
+       flex-direction: row;
+       position:relative;
+       top:400px;
+       right:50px;
+    }
+   .bag_i{
+       width:150px;
+       height:200px;
+       margin: 30px;
+   }
+   .bag_i:hover{
+      transition:all 1s ease-in-out;
+       width:170px;
+       height:210px;
+       margin: 20px;
+   }
+   .container{
+       width:500px;
+       height:600px;
+       position:absolute;
+       overflow:hidden;
+       box-shadow:1px 1px 5px;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       margin: 60px;
+       margin-right: 100px; 
+   }
+   .text{
+       width:600px;
+       height:300px;
+       position:relative;
+       left:700px;
+       top:100px;
+       color:rgb(75, 68, 119);
+       display: flex;
+       flex-wrap: nowrap;
+       flex-direction: column;
+       list-style: none;
+   }
+   .xuanze{
+        width:550px;
+        height:40px;
+        position:relative;
+        top:380px;
+        left:300px;
+        background-color: #fcdec4;
+        border-radius: 5px;
+    }
+    .xuanze h1{
+        color:rgb(244, 242, 240);
+        font-size:20px;
+        text-align: center;
+        position: relative;
+        left:10px;
+        top:-5px;
+        color: #0E2C2A;
+        font-family:Georgia, "Times New Roman", Times, serif;
+    }
+   .pack2{
+       width:100%;
+       height:400px;
+       position:relative;
+       display:flex;
+       background-image:linear-gradient(to left,#a5617a,#F78154);
+   }
+   .text h1{
+       color:black;
+      font-size:20px;
+      text-align: left;
+      font-family:Georgia, "Times New Roman", Times, serif;
+   }
+   .text h2{
+       font-size:30px;
+       text-align: left;
+       color: #0E2C2A;
+       font-family:Georgia, "Times New Roman", Times, serif;
+   }
+   .tan{
+       width:800px;
+       height:250px;
+       position: relative;
+       display:none;
+      left:600px;
+      top:-300px;
+       background-color:#0E2C2A;
+       box-shadow: 0;
+   }
+   .tan h2{
+       font-size: 30px;
+       text-align: left;
+       font-family:Georgia, "Times New Roman", Times, serif;
+       padding:10px;
+       color: #fcdec4;
+   }
+       
+</style>
+<body>
+    <div class="pack2" id="pack2">
+        <!-- 轮播花朵图片的盒子 -->
+        <div class="container">
+            <div class="flower" id="flower2"> 
+              <img  src="IMAGE/f2.png" id="f2" width="500px" height="600px">
+              <img  src="IMAGE/f2b6.png" id="f2b5" width="500px" height="600px">
+              <img  src="IMAGE/f2b5.png" id="f2b6" width="500px" height="600px">
+            </div>
+        </div>
+         <!-- 价格和花语 -->
+        <div class="text">
+            <marquee width=250 behavior=slide direction=left align=center scrollamount="50" scrolldelay="500" loop="1"> <h2>NARCISSU</h2></marquee>
+            <li><h1>$&nbsp5.0</h1></li> 
+            <li><h1>Mysterious and noble,</h1></li> 
+            <li><h1>love between men and women</h1></li> 
+        </div>  
+        <!-- 选择按钮 -->
+         <div class="xuanze">
+             <h1>Choose the bags</h1>
+        </div>
+         <!-- 环保袋子 -->
+        <div class="bag">
+                <div class="bag_i" id="b3" ><img src="IMAGE/bag3.png" width="150px" height="200px"></div>
+                <div class="bag_i" id="b52" ><img src="IMAGE/bag5.png" width="150px" height="200px"></div>
+                <div class="bag_i" id="b4"><img src="IMAGE/bag4.png" width="150px" height="200px"></div>
+                <div class="bag_i" id="b62" ><img src="IMAGE/bag6.png" width="150px" height="200px"></div>
+        </div>
+        
+    </div>
+    <!-- pack2-end -->
+     <!-- 标语弹窗 -->
+    </div>
+        <div class="tan" id="tan">
+            <marquee width=500 behavior=slide direction=left align=center  scrolldelay="500" scrollamount="50"  loop="1" id="zma" > 
+            <h2>Package succeeded!</h2>
+             <h2>You have successfully protected the ecological<br/> environment for the earth once.</h2>
+            </marquee>
+        </div>
+     </div>
+</body>
+<script>
+    let flower2 = document.getElementById("flower2");
+    let left2 = parseInt(getComputedStyle(flower2).left);
+    let tan=document.getElementById("tan");
+    let text=document.getElementById("text");
+    let pack2=document.getElementById("pack2");
+    b62.onclick=function b62()
+    {
+        flower2.style.top=0+"px";
+        flower2.style.left=(left2-500)+"px";
+
+    }
+    b52.onclick=function b52(){
+        flower2.style.top=-600+"px";
+        tan.style.display='flex';
+        setTimeout("tan.style.boxShadow=1+'px '+1+'px '+1+'px'",200);
+        setTimeout("tan.style.boxShadow=5+'px '+2+'px '+5+'px'",200);
+        setTimeout("tan.style.boxShadow=5+'px '+3+'px '+20+'px'",200);
+    }
+    
+</script>
+</html>

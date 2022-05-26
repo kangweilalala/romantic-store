@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+<title>Romantic Store</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="color.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<style>
+
+html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
+*, *::before, *::after{box-sizing:border-box;}
+
+/* 字体
+--------------------------------------------------------------------------------------------------------------- */
+body,.p1{font-family:Verdana, Geneva, sans-serif;}
+h1, h2, h3, h4, h5, h6,p, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:1.4rem; line-height:normal; font-weight:normal; text-transform:capitalize;}
+
+
+
+/************************* header布局 ****************************/
+#row1{position: fixed;top:0;left:0}
+#logo{float:left;}
+#top-right{ float:right;}
+
+#top-right li{  display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
+#top-right li a{display:block; padding:30px 0;}
+#header #logo{margin:30px 20px 0 30px;} /* 上 右 下 左 */
+#header #logo h1{margin:0; padding:0; font-size:2.2rem;}
+
+
+
+/*************************** 主图布局 *******************************/
+#main-picture{padding:200px 0 400px;}
+/* 400px => 200px for #three-boxes negative margin */
+#main-picture article, #main-picture article p{display:block; max-width:75%; margin:0 auto; text-align:center;}
+#main-picture article p{max-width:65%; line-height:2rem;}
+#main-picture .heading{margin-bottom:20px; font-size:4rem;}
+#main-picture footer{margin-top:50px;}
+
+/* 主图位置 */
+.overlay{position:relative; z-index:1;}
+.overlay::after{display:block; position:absolute; top:0; left:0; width:100%; height:100%; content:""; z-index:-1;}
+/* footer */
+.overlay2{position:relative; z-index:1;}
+.overlay2::after{display:block; position:absolute; top:0; left:0; width:100%; height:100%; content:""; z-index:-1;}
+
+
+
+/***********************中间三个盒子布局*****************************/
+
+/* 位置 */
+#three-boxes{display:block; position:relative; margin:-280px -10px 0 30px; z-index:1; text-align:center;}
+/* 280px => 200px + container padding */
+/* 字体排版 */
+#three-boxes figure{display:block; position:relative; max-width:348px; text-align:center;}
+/* 把字体放进盒子里 */
+#three-boxes figure figcaption{display:block; position:absolute; bottom:0; width:100%; padding:0 20px;}
+/* 将两部分字排的更紧密 */
+#three-boxes figure figcaption *{margin:0; padding:0;}
+/* 隐藏下面的文字 */
+#three-boxes figure figcaption div{max-height:0; overflow:hidden; transition:max-height .6s cubic-bezier(0, 1, 0, 1) -.1s;}
+/* 让下面文字显现出来 */
+#three-boxes figure:hover figcaption div{max-height:1200px; transition-timing-function:cubic-bezier(0.5, 0, 1, 0); transition-delay:0s;}
+/* 字体 */
+#three-boxes figure figcaption .heading{padding:20px 0; font-size:1.2rem; font-weight:700; line-height:1;}
+/* 整体往上移一点，让弹窗蹦得更高些 */
+#three-boxes figure figcaption div p{padding:10px 0 20px 0;}
+
+.img-box{display:inline-block; position:relative; max-width:100%;}
+.img-box::before, .img-box::after{display:block; position:absolute; content:""; text-align:center; opacity:0;}
+.img-box::before{top:0; right:0; bottom:0; left:0;}
+.img-box:hover::before, .img-box:hover::after{opacity:1;}
+
+img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+
+
+
+/**************************** footer布局 ************************/
+#footer{padding:80px 0;margin-left: 50px;}
+#footer .heading{margin-bottom:50px; font-size:1.2rem;}
+
+/* 作者图 */
+#footer .latest-img > li{display:inline-block; float:left; width:30%; margin:0 0 5% 5%;}
+#footer .latest-img > li:nth-last-child(-n+3){margin-bottom:0;}
+/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
+#footer .latest-img > li:nth-child(3n+1){margin-left:0; clear:left;}
+/* Removes the need to add class="first" */
+#footer .latest-img > li img{width:100%;}
+/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
+#footer .latest-img > li a.img-box{display:block;}
+
+
+/* 字或图hover紫色动效时间 */
+*, *::before, *::after{transition:all 1s ease-in-out;}
+
+
+/* 消去列表中的原点 */
+.nospace{margin:0; padding:0; list-style:none;}
+
+/* 去掉超链接下划线 */
+a{outline:none; text-decoration:none;}
+
+/* 比例调整 */
+ article, aside, figcaption, figure, footer, header, main, nav, section{display:block; margin:0; padding:0;}
+
+.center-boxes,.footer-boxes{ float:left; margin:0 0 0 4.21052%; list-style:none;}
+.first{margin-left:0; }
+.footer-boxes{width:21.8421%;}
+.center-boxes{width:30.52631%;}
+
+/* 层次调整 */
+.clear, .group{display:block;}
+.clear::before, .clear::after, .group::before, .group::after{display:table; content:"";}
+.clear, .clear::after, .group, .group::after{clear:both;}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+  <div class="row1">
+    <div id="header" class="clear">
+<!-- header -->
+
+      <div id="logo"> 
+        <h1><a href="index.html">Romantic Store</a></h1>
+      </div>
+<!-- 左边logo -->
+
+      <div id="top-right"> 
+        <ul class="clear">
+          <li><a href="http://kangweilalala.github.io">MINE</a></li>
+          <li><a href="#">CART</a></li>
+          <li><a href="login.html">SIGN IN</a></li>
+          <li><a href="sign.html">ENROLL IN</a></li>
+        </ul>
+      </div>
+<!-- 右边列表 -->
+    </div>
+  </div>
+
+
+<!-- 主图 -->
+  <div class="overlay">
+    <div id="main-picture" class=" clear"> 
+      <article>
+<!-- 标题+描述 -->
+        <h3 class="heading article1">Charm of environmental protection</h3>
+        <p class='article1'>All for environmental protection,<br/> advocate all residents on the earth to reduce the use of disposable plastic bags.</p>
+      </article>
+    </div>
+  </div>
+
+
+
+<div class="row2">
+  <main class=" container clear"> 
+    <section id="three-boxes">
+      <ul class="nospace group">
+
+        <li class="center-boxes first">
+          <figure><a class="img-box" href="packing1.html"><img src="IMAGE/flower1.png" alt=""></a>
+            <figcaption id='xq'>
+              <h6 class="heading">hydrangea</h6>
+              <div>
+                <p>Romantic and sweet,<br/> implying that people yearn for love</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+
+
+        <li class="center-boxes">
+          <figure><a class="img-box" href="packing2.html"><img src="IMAGE/flower2.png" alt=""></a>
+            <figcaption>
+              <h6 class="heading">narcissu</h6>
+              <div>
+                <p>Mysterious and noble,<br/> love between men and women</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+
+
+        <li class="center-boxes">
+          <figure><a class="img-box" href="#"><img src="IMAGE/flower3.png" alt=""></a>
+            <figcaption>
+              <h6 class="heading">tulips</h6>
+              <div>
+                <p>hopeless love,<br/>  pure and innocent</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        
+      </ul>
+    </section>
+  </main>
+</div>
+
+
+<!-- footer -->
+<div class="overlay2 row3">
+  <footer id="footer" class="clear"> 
+    
+    <div class="footer-boxes first">
+      <h6 class="heading">Flowers' Web</h6>
+      <ul class="nospace linklist">
+        <li><a href="packing1.html">HYDRANGEA</a></li>
+        <li><a href="packing2.html">NARCISSU</a></li>
+      </ul>
+    </div>
+    <div class="footer-boxes">
+      <h6 class="heading">Our philosophy</h6>
+      <p class="p1">All for environmental protection,
+      <br/>
+      advocate all residents on the earth to reduce the use of disposable plastic bags.</p>
+      <form action="#" method="post">
+    
+      </form>
+    </div>
+    <div class="footer-boxes">
+      <h6 class="heading">Web Birth time</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <time class="block font-xs" datetime="2022-05-21">Saturday, 21<sup>th</sup> May 2022</time>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-boxes">
+      <h6 class="heading">Web Founders</h6>
+      <ul class="nospace clear latest-img">
+        <li><a class="img-box" href="http://kangweilalala.github.io"><img src="IMAGE/头像v.jpeg" ><p class="p1">ViVi</p></a></li>
+        <li><a class="img-box" href="http://44Lidia.github.io"><img src="IMAGE/头像l.jpeg" ><p class="p1">Lidia</p></a></li>
+      </ul>
+    </div>
+        
+  </footer>
+</div>
+
+
+</body>
+</html>

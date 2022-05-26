@@ -1,0 +1,56 @@
+
+/* HOVER颜色
+--------------------------------------------------------------------------------------------------------------- */
+
+/* top-right的紫色字体覆盖成白色 */
+#top-right li a{color:inherit;}
+/*_____________修改1——————————————*/
+#top-right .active a, #top-right a:hover, #top-right li:hover > a{color:#ffffff; background-color:inherit;}
+
+
+/*_____________修改3——————————————*/
+a{color:#fcdec4;}
+
+
+/* 各图片盒子覆盖颜色 */
+/*_____________修改24——————————————*/
+.img-box:hover::before{background-color:#fcdec444;}
+.img-box, .img-box:hover::after{color:#fcdec4;}
+
+/* .heading.underline::after{background-color:#A032AB;} */
+
+
+
+
+
+/************************** 1 ************************/
+.row1{color:#ddac9a; background-color:#0E2C2A;}
+
+
+/************************** 2 渐变************************/
+.article1{color:#0E2C2A; }
+.overlay{background-image:linear-gradient(to left,#a5617a,#F78154);}
+
+
+/************************** 3 ************************/
+.row2{color:#0E2C2A; background-image:linear-gradient(to left,#a5617a,#F78154)}
+
+
+
+/************************** 4 ************************/
+.overlay2::after{background-color:#0E2C2A;}
+.row3{color:#ddac9a;}
+
+
+/* Header logo的紫色字体覆盖成白色 */
+#header #logo h1 a{color:inherit;}
+
+/* footer第一排字 */
+#footer .heading{color:#ddac9a;}
+
+
+
+
+
+
+

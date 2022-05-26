@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 登录</title>
+    <link rel="stylesheet" href="mvp.css">
+</head>
+<style>
+    *{
+       user-select: none;
+    }
+    body{
+        /* background-image:url("y.jpg"); */
+         background-image:linear-gradient(to left,#a5617a,#F78154); 
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .login{
+        position:absolute;
+        top:50%;
+        margin-top: -200px;
+        left:50%;
+        margin-left: -200px;
+        background-image:linear-gradient(to left,#a5617a,#F78154);
+        width:500px;
+        height:500px;
+        border-radius: 25px;
+        text-align: center;
+        padding: 5px 40px;
+        box-sizing: border-box;
+    }
+    .h1{
+        font-family:Georgia, "Times New Roman", Times, serif;
+        font-size: 42px;
+        font-weight: 600;
+    }
+    .input{
+        background-color: azure;
+        width:100%;
+        height:48px;
+        margin-bottom: 10px;
+        border:none;
+        border-bottom: 2px solid green;
+        outline:none;
+        font-size:22px;
+        position:relative;
+        left:100px;
+    }
+    .btn{
+        background-color:aliceblue;
+        width:38%;
+        height:48px;
+        border-radius: 8px;
+        margin-top: 40px;
+        font-size:20px;
+        font-weight:600;
+        color:#a5617a;
+    }
+    .vershow{
+       height:48px;
+       width:70%;
+    }
+    .change{
+        width:30%;
+        height:28px;
+        font-size:20px;
+        font-weight:600;
+        color:antiquewhite;
+        border: 2px solid white;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 5px;
+        position:relative;
+        left:250px;
+    }
+    .yan{
+        background-color:aliceblue;
+        width:50%;
+        height:18px;
+        border-radius: 8px;
+        font-size:20px;
+        font-weight:600;
+        color:#a5617a;
+    }
+    .btn:hover{
+        background-image:linear-gradient(to left,#a5617a,#F78154);
+    }
+</style>
+<body>
+    <form action="" class="login">
+        <h1>Login</h1>
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password">
+        <div class="vershow" id="vershow">
+            <input type="text" class="yan" id="yan" value="code">
+            <div class="change">换一个</div>
+        </div>
+        <input type="text" placeholder="input the versification code">
+        <input type="submit" class="btn" value="enroll in">
+    </form>
+</body>
+<script>
+    vershow.onclick=function(){
+     let yan = document.getElementById("yan");
+    var arr="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var result="";
+    for(let i=0;i<4;i++)
+    {
+        var n=Math.floor(Math.random()*arr.length);
+        result+=arr[n];
+    }
+    yan.setAttribute("value",result);
+   
+    }
+    
+</script>
+</html>
